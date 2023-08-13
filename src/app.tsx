@@ -1,29 +1,11 @@
-import { Component, PropsWithChildren } from 'react'
-import { Provider } from 'mobx-react'
+import 'windi.css';
+import { Provider } from 'mobx-react';
+import './app.css';
 
-import counterStore from './store/counter'
+const store = {};
 
-import './app.css'
+const App = props => {
+    return <Provider store={store}>{props.children}</Provider>;
+};
 
-const store = {
-  counterStore
-}
-
-class App extends Component<PropsWithChildren> {
-  componentDidMount () {}
-
-  componentDidShow () {}
-
-  componentDidHide () {}
-
-  // this.props.children 就是要渲染的页面
-  render () {
-    return (
-      <Provider store={store}>
-        {this.props.children}
-      </Provider>
-    )
-  }
-}
-
-export default App
+export default App;
