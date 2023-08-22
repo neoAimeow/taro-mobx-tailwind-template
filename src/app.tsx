@@ -1,11 +1,9 @@
 import 'windi.css';
-import { Provider } from 'mobx-react';
 import './app.css';
-
-const store = {};
+import { ServiceProvider, services } from './service';
 
 const App = props => {
-    return <Provider store={store}>{props.children}</Provider>;
+    return <ServiceProvider value={services}>{props.children}</ServiceProvider>;
 };
 
 export default App;
